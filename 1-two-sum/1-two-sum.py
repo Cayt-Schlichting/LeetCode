@@ -8,12 +8,13 @@ class Solution:
         #create empty dictionary
         d = {}
         #start stepping through each value
-        for i, n in enumerate(nums):
+        #After testing, it looks like enumerate is more time consuming that range(len(n))
+        for i in range(len(nums)):
             #At index, find the complementary value needed
-            val = target - n
+            val = target - nums[i]
             #see if that value is in the dictionary
             if val in d:
                 #if so, return indices
                 return d[val], i
             #otherwise add current list index to dict, then go back through loop
-            else: d[n] = i
+            else: d[nums[i]] = i
