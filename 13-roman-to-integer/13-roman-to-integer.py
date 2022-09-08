@@ -1,7 +1,5 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        #convert string to list
-        l = list(s)
         #create translation dictionary
         conv = {
             'I':1,
@@ -13,7 +11,7 @@ class Solution:
             'M':1000
         }
         #convert romans to list of numbers
-        l = [conv[i] for i in l]
+        l = [conv[i] for i in list(s)]
         last = len(l)
         val = 0
         skip = False
