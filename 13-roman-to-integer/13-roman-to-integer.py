@@ -1,5 +1,6 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
+        l=list(s)
         #create translation dictionary
         conv = {
             'I':1,
@@ -11,8 +12,8 @@ class Solution:
             'M':1000
         }
         #convert romans to list of numbers
-        l = [conv[i] for i in list(s)]
-        last = len(l)
+        l = [conv[i] for i in l]
+        # last = len(l)
         val = 0
         skip = False
         #loop over list
@@ -23,7 +24,7 @@ class Solution:
                 skip = False
                 continue
             #if last element of list, just add to total
-            if i == last-1: 
+            if i == len(l)-1: 
                 val += v
             elif v >= l[i+1]:
                 #if this is >= next, add value to total
